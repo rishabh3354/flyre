@@ -2,7 +2,7 @@
 Version=1.0
 GenericName=flyre
 Name=Flyre
-Type=Game
+Type=Application
 Icon=flyre.png
 Keywords=shootinggames;flyre;aeroplane;plane;games;
 Exec=flyre %F
