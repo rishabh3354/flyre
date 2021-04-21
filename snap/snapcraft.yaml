@@ -14,7 +14,7 @@ architectures:
 
 apps:
   flyre:
-    command: bin/desktop-launch python3 $SNAP/flyre.py
+    command: bin/desktop-launch python3.8 $SNAP/flyre.py
     plugs:
       - home
       - gsettings
