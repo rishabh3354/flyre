@@ -42,6 +42,10 @@ plugs:
     interface: content
     target: $SNAP/data-dir/sounds
     default-provider: gtk-common-themes
+  pyqt5-runtime:
+    interface: content
+    target: $SNAP/pyqt5-runtime
+    default-provider: pyqt5-runtime
 
 
 parts:
