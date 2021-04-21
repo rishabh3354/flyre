@@ -54,7 +54,6 @@ parts:
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/
       cp -rf ${SNAPCRAFT_PART_SRC}/flyre.desktop ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/flyre.desktop
 
-
   snap-launcher:
     plugin: dump
     source: snap_launcher/
@@ -64,6 +63,7 @@ parts:
     override-pull: |
       apt install -y software-properties-common
       add-apt-repository -y ppa:deadsnakes/ppa
+      apt install -y curl
       curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       python3.8 get-pip.py
       pip3.8 install pygame==2.0.1
