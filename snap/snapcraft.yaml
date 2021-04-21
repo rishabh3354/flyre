@@ -63,6 +63,7 @@ parts:
     override-pull: |
       apt install -y software-properties-common
       add-apt-repository -y ppa:deadsnakes/ppa
+      apt install -y python3.8
       apt install -y curl
       curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       python3.8 get-pip.py
