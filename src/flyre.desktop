@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+GenericName=flyre
+Name=Flyre
+Type=Game
+Icon=flyre.png
+Keywords=shootinggames;flyre;aeroplane;plane;games;
+Exec=flyre %F
+Categories=Games
+Terminal=false
+Name[en_IN]=Flyre
