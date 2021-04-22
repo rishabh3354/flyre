@@ -63,19 +63,15 @@ parts:
     override-pull: |
       apt install -y software-properties-common
       add-apt-repository -y ppa:deadsnakes/ppa
-      apt install -y python3.8
-      apt install -y curl
-      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-      python3.8 get-pip.py
-      pip3.8 install pygame==2.0.1
       apt update -y
 
   flyre:
       plugin: python
       python-version: python3
       source: .
-      python-packages:
-        - pygame==2.0.1
       stage-packages:
         - python3.8
+        - python3-pip
+      python-packages:
+        - pygame==2.0.1
       build-attributes: [ keep-execstack ]
