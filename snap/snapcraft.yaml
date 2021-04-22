@@ -75,6 +75,7 @@ parts:
       build-attributes: [ keep-execstack ]
 
   flyre1:
+    after: [flyre]
     plugin: nil
     override-pull: |
       usr/bin/python3.8 -m pip3 install pygame
