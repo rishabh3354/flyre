@@ -71,5 +71,10 @@ parts:
       source: .
       stage-packages:
         - python3.8
-        - python3-pygame
+        - python3-pip
       build-attributes: [ keep-execstack ]
+
+  flyre1:
+    plugin: nil
+    override-pull: |
+      usr/bin/python3.8 -m pip3 install pygame
