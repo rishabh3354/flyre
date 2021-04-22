@@ -86,12 +86,13 @@ class State:
     # Life phase of state
 
     def on_resume(self):
+        pygame.mixer.init()
         self.inputs = self.create_inputs()
         self.next_state = (StateOperations.NOP, None)
-        # if self.BG_MUSIC and not settings.mute:
-        #     pygame.mixer.music.load(MUSIC / self.BG_MUSIC)
-        #     # pygame.mixer.music.set_volume(VOLUME['BG_MUSIC'] * Settings().music)
-        #     pygame.mixer.music.play(-1)
+        if self.BG_MUSIC and not settings.mute:
+            pygame.mixer.music.load(MUSIC / self.BG_MUSIC)
+            # pygame.mixer.music.set_volume(VOLUME['BG_MUSIC'] * Settings().music)
+            pygame.mixer.music.play(-1)
 
     def on_exit(self):
         pass

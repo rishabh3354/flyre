@@ -10,6 +10,7 @@ VOLUMES = {"shoot": 0.4, "denied": 0.8, "hit": 0.7}
 
 @lru_cache()
 def sound(name):
+    pygame.mixer.init()
     file = SFX / (name + ".wav")
     sound = pygame.mixer.Sound(file)
 
