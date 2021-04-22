@@ -146,7 +146,7 @@ else
   append_dir LD_LIBRARY_PATH $RUNTIME/usr/lib/$ARCH
   append_dir PATH $RUNTIME/usr/bin
   #set PYTHONPATH
-  export PYTHONPATH=${PYTHONPATH}:$RUNTIME/usr/lib/python36.zip:$RUNTIME/usr/lib/python3.6:$RUNTIME/usr/lib/python3.6/lib-dynload:$RUNTIME/usr/lib/python3/dist-packages:$RUNTIME/lib/python3.6/site-packages
+  export PYTHONPATH=${PYTHONPATH}:$RUNTIME/usr/lib/python38.zip:$RUNTIME/usr/lib/python3.8:$RUNTIME/usr/lib/python3.8/lib-dynload:$RUNTIME/usr/lib/python3/dist-packages:$RUNTIME/lib/python3.8/site-packages
   WITH_RUNTIME=yes
 fi
 
