@@ -58,9 +58,16 @@ parts:
     plugin: dump
     source: snap_launcher/
 
+  sdl:
+      plugin: nil
+      stage-packages:
+         - libsdl2-2.0-0
+         - libsdl2-image-2.0-0
+         - libsdl2-mixer-2.0-0
+         - libsdl2-ttf-2.0-0
+
   flyre:
       plugin: python
       source: .
       python-packages:
-        - pygame
-      build-attributes: [ keep-execstack ]
+        - pygame == 2.0.1
