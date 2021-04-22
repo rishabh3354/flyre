@@ -14,7 +14,7 @@ architectures:
 
 apps:
   flyre:
-    command: bin/desktop-launch python3.8 $SNAP/flyre.py
+    command: bin/desktop-launch python $SNAP/flyre.py
     plugs:
       - home
       - gsettings
@@ -62,5 +62,5 @@ parts:
       plugin: python
       source: .
       python-packages:
-        - pygame==2.0.1
+        - pygame
       build-attributes: [ keep-execstack ]
