@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-
 __all__ = ["Settings", "settings"]
 
 from .constants import ASSETS_DIR
@@ -15,7 +14,10 @@ class Settings:
     """
 
     _instance = None
-    PATH = ASSETS_DIR / "settings.json"
+    from pathlib import Path
+    PATH = str(Path.home()) + "/settings.json"
+
+    # PATH = ASSETS_DIR / "settings.json"
 
     def __new__(cls):
         if cls._instance:
@@ -44,13 +46,29 @@ class Settings:
     def load(self):
         """(re)load the settings from the file. Called automatically on the first instance of Settings."""
 
-        if self.PATH.exists():
-            self.__dict__.update(json.loads(self.PATH.read_text()))
+        # if self.PATH.exists():
+        #     self.__dict__.update(json.loads(self.PATH.read_text()))
+        if self.PATH:
+            try:
+                user_data_file = open(self.PATH, "r+")
+                data = user_data_file.read()
+                self.__dict__.update(json.loads(data))
+            except Exception as e:
+                default = {"debug": False,
+                           "highscores": [[15000, "Warlord"], [8900, "F\u00e9lix"], [3000, "Daniel"]],
+                           "name": "Alan Walker",
+                           "last_score": [3000, "Robert"], "mute": False}
+                data = json.dumps(default)
+                with open(self.PATH, "w+") as file:
+                    file.write(data)
 
     def save(self):
         """Save the settings to its file. This is not called automatically."""
 
-        self.PATH.write_text(json.dumps(self.__dict__))
+        # self.PATH.write_text(json.dumps(self.__dict__))
+        data = json.dumps(self.__dict__)
+        with open(self.PATH, "w+") as file:
+            file.write(data)
 
     def reset(self):
         """Reset the settings."""
