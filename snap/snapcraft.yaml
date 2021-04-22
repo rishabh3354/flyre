@@ -60,7 +60,6 @@ parts:
 
   flyre:
       plugin: python
-      python-version: python3
       source: .
       python-packages:
         - pygame==2.0.1
